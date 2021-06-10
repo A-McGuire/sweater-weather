@@ -29,10 +29,21 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'pry'
 end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'rubocop-rails'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'simplecov'
+  gem 'simplecov'
 end
 
 
