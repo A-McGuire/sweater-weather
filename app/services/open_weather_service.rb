@@ -1,10 +1,10 @@
 class OpenWeatherService
-    class << self
+  class << self
     def get_location_weather(location)
       resp = conn.get('onecall') do |req|
         req.params['appid'] = ENV['open_weather_key']
         req.params['lat'] = location[:lat]
-        req.params['lon'] = location[:lon]
+        req.params['lon'] = location[:lng]
       end
       parse_data(resp)
     end

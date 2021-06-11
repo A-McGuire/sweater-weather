@@ -1,5 +1,5 @@
 class MapQuestService
-    class << self
+  class << self
     def get_location_details(location)
       resp = conn.get('address') do |req|
         req.params['key'] = ENV['mapquest_key']
