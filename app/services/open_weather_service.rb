@@ -5,6 +5,8 @@ class OpenWeatherService
         req.params['appid'] = ENV['open_weather_key']
         req.params['lat'] = location[:lat]
         req.params['lon'] = location[:lng]
+        req.params['exclude'] = 'minutely,alerts'
+        req.params['units'] = 'imperial'
       end
       parse_data(resp)
     end
