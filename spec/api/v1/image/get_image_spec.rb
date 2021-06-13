@@ -30,4 +30,18 @@ RSpec.describe '/backgrounds', :vcr do
     expect(image[:data][:attributes][:image][:credit][:author]).to be_a String
     expect(image[:data][:attributes][:image][:credit][:author_profile]).to be_a String
   end
+
+    describe 'sad path' do
+    it 'returns a 400 if there is no location param provided' do
+      get '/api/v1/backgrounds'
+
+      expect(response.status).to eq(400)
+    end
+
+    it 'returns a 400 if the location param is empty' do
+      get '/api/v1/backgrounds?location='
+
+      expect(response.status).to eq(400)
+    end
+  end
 end
