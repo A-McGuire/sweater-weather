@@ -87,4 +87,65 @@ RSpec.describe '/forcast', :vcr do
     expect(forcast[:data][:attributes][:hourly_weather].first[:conditions]).to be_a String
     expect(forcast[:data][:attributes][:hourly_weather].first[:icon]).to be_a String
   end
+
+  it 'does not have any unnessesary data for current weather' do
+    get '/api/v1/forcast'
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+    
+    forcast = JSON.parse(response.body, symbolize_names: true)
+    
+    expect(forcast[:data].include?(:lat)).to eq(false)
+    expect(forcast[:data].include?(:lon)).to eq(false)
+    expect(forcast[:data].include?(:timezone)).to eq(false)
+    expect(forcast[:data].include?(:timezone_offset)).to eq(false)
+    expect(forcast[:data].include?(:minutely)).to eq(false)
+    expect(forcast[:data].include?(:alerts)).to eq(false)
+    expect(forcast[:data][:attributes][:current_weather].include?(:dt)).to eq(false)
+    expect(forcast[:data][:attributes][:current_weather].include?(:pressure)).to eq(false)
+    expect(forcast[:data][:attributes][:current_weather].include?(:dew_point)).to eq(false)
+    expect(forcast[:data][:attributes][:current_weather].include?(:clouds)).to eq(false)
+    expect(forcast[:data][:attributes][:current_weather].include?(:wind_speed)).to eq(false)
+    expect(forcast[:data][:attributes][:current_weather].include?(:wind_deg)).to eq(false)
+    expect(forcast[:data][:attributes][:current_weather].include?(:wind_gust)).to eq(false)
+  end
+
+  it 'does not have any unnessesary data for daily weather' do
+    get '/api/v1/forcast'
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+    
+    forcast = JSON.parse(response.body, symbolize_names: true)
+    
+    expect(forcast[:data][:attributes][:daily_weather].include?(:dt)).to eq(false)
+    expect(forcast[:data][:attributes][:daily_weather].include?(:moonrise)).to eq(false)
+    expect(forcast[:data][:attributes][:daily_weather].include?(:moonset)).to eq(false)
+    expect(forcast[:data][:attributes][:daily_weather].include?(:moonphase)).to eq(false)
+    expect(forcast[:data][:attributes][:daily_weather].include?(:pressure)).to eq(false)
+    expect(forcast[:data][:attributes][:daily_weather].include?(:dew_point)).to eq(false)
+    expect(forcast[:data][:attributes][:daily_weather].include?(:clouds)).to eq(false)
+    expect(forcast[:data][:attributes][:daily_weather].include?(:wind_speed)).to eq(false)
+    expect(forcast[:data][:attributes][:daily_weather].include?(:wind_deg)).to eq(false)
+    expect(forcast[:data][:attributes][:daily_weather].include?(:wind_gust)).to eq(false)
+  end
+
+  it 'does not have any unnessesary data for hourly weather' do
+    get '/api/v1/forcast'
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+    
+    forcast = JSON.parse(response.body, symbolize_names: true)
+    
+    expect(forcast[:data][:attributes][:hourly_weather].include?(:dt)).to eq(false)
+    expect(forcast[:data][:attributes][:hourly_weather].include?(:pressure)).to eq(false)
+    expect(forcast[:data][:attributes][:hourly_weather].include?(:dew_point)).to eq(false)
+    expect(forcast[:data][:attributes][:hourly_weather].include?(:clouds)).to eq(false)
+    expect(forcast[:data][:attributes][:hourly_weather].include?(:wind_speed)).to eq(false)
+    expect(forcast[:data][:attributes][:hourly_weather].include?(:wind_deg)).to eq(false)
+    expect(forcast[:data][:attributes][:hourly_weather].include?(:wind_gust)).to eq(false)
+    expect(forcast[:data][:attributes][:hourly_weather].include?(:pop)).to eq(false)
+  end
 end
