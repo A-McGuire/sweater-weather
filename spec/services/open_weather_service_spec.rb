@@ -107,12 +107,14 @@ RSpec.describe 'open weather service', :vcr do
     expect(data[:daily].first[:wind_speed]).to be_a Float
     expect(data[:daily].first[:wind_deg]).to be_a Integer
     expect(data[:daily].first[:wind_gust]).to be_a Float
+
     expect(data[:daily].first[:weather]).to be_an Array
     expect(data[:daily].first[:weather].first.keys).to eq([:id, :main, :description, :icon])
     expect(data[:daily].first[:weather].first[:id]).to be_a Integer
     expect(data[:daily].first[:weather].first[:main]).to be_a String
     expect(data[:daily].first[:weather].first[:description]).to be_a String
     expect(data[:daily].first[:weather].first[:icon]).to be_a String
+    
     expect(data[:daily].first[:clouds]).to be_a Integer
     expect(data[:daily].first[:pop]).to be_a Float
     expect(data[:daily].first[:uvi]).to be_a Float
