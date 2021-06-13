@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'mapquest service', :vcr do
-  it 'returns data in the corrent format' do
+  it 'returns data in the correct format' do
     location = 'denver, co'
     data = MapQuestService.get_location_details(location)
     
