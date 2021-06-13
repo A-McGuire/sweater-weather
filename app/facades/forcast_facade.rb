@@ -15,10 +15,10 @@ class ForcastFacade
         conditions: data[:current][:weather].first[:description],
         icon: data[:current][:weather].first[:icon]
       }
-      
-      by_day = data[:daily].first(5).map do |day| 
+
+      by_day = data[:daily].first(5).map do |day|
         {
-          date: Time.at(day[:dt]).strftime("%Y-%m-%d"),
+          date: Time.at(day[:dt]).strftime('%Y-%m-%d'),
           sunrise: Time.at(day[:sunrise]).to_s,
           sunset: Time.at(day[:sunset]).to_s,
           max_temp: day[:temp][:max],
@@ -27,10 +27,10 @@ class ForcastFacade
           icon: day[:weather].first[:icon]
         }
       end
-      
+
       by_hour = data[:hourly].first(8).map do |hour|
         {
-          time: Time.at(hour[:dt]).strftime("%H:%M:%S"),
+          time: Time.at(hour[:dt]).strftime('%H:%M:%S'),
           temperature: hour[:temp],
           conditions: hour[:weather].first[:description],
           icon: hour[:weather].first[:icon]
