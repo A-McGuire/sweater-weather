@@ -148,4 +148,18 @@ RSpec.describe '/forcast', :vcr do
     expect(forcast[:data][:attributes][:hourly_weather].include?(:wind_gust)).to eq(false)
     expect(forcast[:data][:attributes][:hourly_weather].include?(:pop)).to eq(false)
   end
+
+  describe 'sad path' do
+    it 'returns a 400 if there is no location param provided' do
+      get '/api/v1/forcast'
+
+      expect(response.status).to eq(400)
+    end
+
+    it 'returns a 400 if the location param is empty' do
+      get '/api/v1/forcast?location='
+
+      expect(response.status).to eq(400)
+    end
+  end
 end
