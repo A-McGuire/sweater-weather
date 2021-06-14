@@ -18,7 +18,7 @@ class BookFacade
           }
         end
       }
-
+      # TODO: refactor to fix issue between openstruct and serializer
       # OpenStruct.new(id: nil, data: books)
       Book.new(books)
     end

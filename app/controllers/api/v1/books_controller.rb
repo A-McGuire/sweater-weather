@@ -1,5 +1,6 @@
 class Api::V1::BooksController < ApplicationController
   def index
+    # TODO: refactor error handling into helper method. In app controller? 
     return render json: {error: 'location parameter required'}, 
       status: :bad_request if params[:location].nil? || params[:location] == ''
     return render json: {error: 'quantity parameter required'}, 
