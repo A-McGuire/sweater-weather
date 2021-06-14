@@ -7,7 +7,7 @@ RSpec.describe 'POST /sessions', :vcr do
       password: "password"
     }
 
-    post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json"}
+    post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
 
     expect(response).to be_successful
     expect(response.status).to eq(200)
@@ -33,7 +33,7 @@ RSpec.describe 'POST /sessions', :vcr do
         password: "password",
       }
   
-      post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json"}
+      post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
       
       resp = JSON.parse(response.body, symbolize_names: true)
   
@@ -51,7 +51,7 @@ RSpec.describe 'POST /sessions', :vcr do
         password: "password",
       }
   
-      post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json"}
+      post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
       resp = JSON.parse(response.body, symbolize_names: true)
   
       expect(response).to_not be_successful
@@ -68,7 +68,7 @@ RSpec.describe 'POST /sessions', :vcr do
         password: "pass",
       }
   
-      post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json"}
+      post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
       resp = JSON.parse(response.body, symbolize_names: true)
   
       expect(response).to_not be_successful
@@ -85,7 +85,7 @@ RSpec.describe 'POST /sessions', :vcr do
         password: "",
       }
   
-      post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json"}
+      post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
       resp = JSON.parse(response.body, symbolize_names: true)
   
       expect(response).to_not be_successful

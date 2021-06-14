@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'POST /users' do
+RSpec.describe 'POST /users', :vcr do
   it 'recieves user data as json in body and creates user' do
     body = {
       email: "whatever@example.com",
@@ -8,7 +8,7 @@ RSpec.describe 'POST /users' do
       password_confirmation: "password"
     }
 
-    post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json" }
+    post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
 
     user = User.find_by(email: 'whatever@example.com')
     
@@ -40,7 +40,7 @@ RSpec.describe 'POST /users' do
         password_confirmation: "password"
       }
   
-      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json" }
+      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
       resp = JSON.parse(response.body, symbolize_names: true)
   
       expect(response).to_not be_successful
@@ -57,7 +57,7 @@ RSpec.describe 'POST /users' do
         password_confirmation: "123"
       }
   
-      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json" }
+      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
       resp = JSON.parse(response.body, symbolize_names: true)
   
       expect(response).to_not be_successful
@@ -73,7 +73,7 @@ RSpec.describe 'POST /users' do
         password_confirmation: "123"
       }
   
-      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json" }
+      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
       resp = JSON.parse(response.body, symbolize_names: true)
   
       expect(response).to_not be_successful
@@ -90,7 +90,7 @@ RSpec.describe 'POST /users' do
         password_confirmation: "pass"
       }
   
-      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json" }
+      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
       resp = JSON.parse(response.body, symbolize_names: true)
   
       expect(response).to_not be_successful
@@ -107,7 +107,7 @@ RSpec.describe 'POST /users' do
         password_confirmation: ""
       }
   
-      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json" }
+      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
       resp = JSON.parse(response.body, symbolize_names: true)
   
       expect(response).to_not be_successful
@@ -122,7 +122,7 @@ RSpec.describe 'POST /users' do
         email: "whatever@example.com"
       }
   
-      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json" }
+      post '/api/v1/users', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
       resp = JSON.parse(response.body, symbolize_names: true)
   
       expect(response).to_not be_successful
