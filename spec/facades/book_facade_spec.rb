@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'book facade', :vcr do
   it 'creates an object with the correct attributes' do
     books = BookFacade.location_book_data('denver, co', 5)
-    binding.pry
+    
     expect(books.id).to eq(nil)
     expect(books).to be_a Book
     
