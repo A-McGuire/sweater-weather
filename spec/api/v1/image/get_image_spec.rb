@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe '/backgrounds', :vcr do
   it 'can get a locations image' do
 
-    get '/api/v1/backgrounds?location=denver, co'
+    get '/api/v1/backgrounds?location=denver, co', headers: { "Content-Type": "application/json" }
 
     expect(response).to be_successful
     expect(response.status).to eq(200)
@@ -33,13 +33,13 @@ RSpec.describe '/backgrounds', :vcr do
 
     describe 'sad path' do
     it 'returns a 400 if there is no location param provided' do
-      get '/api/v1/backgrounds'
+      get '/api/v1/backgrounds', headers: { "Content-Type": "application/json" }
 
       expect(response.status).to eq(400)
     end
 
     it 'returns a 400 if the location param is empty' do
-      get '/api/v1/backgrounds?location='
+      get '/api/v1/backgrounds?location=', headers: { "Content-Type": "application/json" }
 
       expect(response.status).to eq(400)
     end
