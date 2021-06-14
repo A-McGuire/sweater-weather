@@ -1,6 +1,6 @@
 class BookFacade
   class << self
-    def location_book_data(location, quantity = 5)
+    def location_book_data(location, quantity)
       forecast = ForecastFacade.location_weather_data(location)
       data = OpenLibraryService.get_location_books(location, quantity)
       books = {

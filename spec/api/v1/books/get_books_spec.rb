@@ -53,5 +53,50 @@ RSpec.describe '/book-search', :vcr do
       expect(data.keys).to eq([:error])
       expect(data[:error]).to eq("location parameter required")
     end
+
+    it 'returns a 400 if the quantity param is empty' do
+      get '/api/v1/book-search?location=denver,co&quantity='
+
+      data = JSON.parse(response.body, symbolize_names: true)
+      expect(response.status).to eq(400)
+      expect(data.keys).to eq([:error])
+      expect(data[:error]).to eq("quantity parameter required")
+    end
+
+    it 'returns a 400 if the quantity param is missing' do
+      get '/api/v1/book-search?location=denver,co'
+
+      data = JSON.parse(response.body, symbolize_names: true)
+      expect(response.status).to eq(400)
+      expect(data.keys).to eq([:error])
+      expect(data[:error]).to eq("quantity parameter required")
+    end
+
+    it 'returns a 400 if the quantity param is not an interger' do
+      get '/api/v1/book-search?location=denver,co&quantity=x'
+
+      data = JSON.parse(response.body, symbolize_names: true)
+      expect(response.status).to eq(400)
+      expect(data.keys).to eq([:error])
+      expect(data[:error]).to eq("quantity parameter must be an integer greater than 0")
+    end
+
+    it 'returns a 400 if the quantity param is not an interger greater than 0' do
+      get '/api/v1/book-search?location=denver,co&quantity=0'
+
+      data = JSON.parse(response.body, symbolize_names: true)
+      expect(response.status).to eq(400)
+      expect(data.keys).to eq([:error])
+      expect(data[:error]).to eq("quantity parameter must be an integer greater than 0")
+    end
+
+    it 'returns a 400 if the quantity param is not an interger greater than 0' do
+      get '/api/v1/book-search?location=denver,co&quantity=-10'
+
+      data = JSON.parse(response.body, symbolize_names: true)
+      expect(response.status).to eq(400)
+      expect(data.keys).to eq([:error])
+      expect(data[:error]).to eq("quantity parameter must be an integer greater than 0")
+    end
   end
 end
