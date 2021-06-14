@@ -44,11 +44,28 @@ RSpec.describe 'POST /sessions', :vcr do
       expect(resp[:errors]).to eq('Invalid user credentials')
     end
 
+    it 'responds with a 400 level status if email field is missing' do
+      user = User.create!(email: 'whatever@example.com', password: 'password')
+      body = {
+        password: "password"
+      }
+  
+      post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
+      
+      resp = JSON.parse(response.body, symbolize_names: true)
+  
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+  
+      expect(resp.keys).to eq([:errors])
+      expect(resp[:errors]).to eq('Email is required')
+    end
+
     it 'responds with a 400 level status if email is blank' do
       user = User.create!(email: 'whatever@example.com', password: 'password')
       body = {
         email: "",
-        password: "password",
+        password: "password"
       }
   
       post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
@@ -65,7 +82,7 @@ RSpec.describe 'POST /sessions', :vcr do
       user = User.create!(email: 'whatever@example.com', password: 'password')
       body = {
         email: "whatever@example.com",
-        password: "pass",
+        password: "pass"
       }
   
       post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
@@ -82,7 +99,7 @@ RSpec.describe 'POST /sessions', :vcr do
       user = User.create!(email: 'whatever@example.com', password: 'password')
       body = {
         email: "whatever@example.com",
-        password: "",
+        password: ""
       }
   
       post '/api/v1/sessions', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
