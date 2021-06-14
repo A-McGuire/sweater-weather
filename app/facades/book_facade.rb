@@ -19,7 +19,8 @@ class BookFacade
         end
       }
 
-      OpenStruct.new(id: nil, data: books)
+      # OpenStruct.new(id: nil, data: books)
+      Book.new(books)
     end
   end
 end
