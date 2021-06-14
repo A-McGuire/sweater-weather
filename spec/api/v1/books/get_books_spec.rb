@@ -23,7 +23,7 @@ RSpec.describe '/book-search', :vcr do
     expect(data[:data][:attributes][:forecast]).to be_a Hash
     expect(data[:data][:attributes][:forecast].keys).to eq([:summary, :temperature])
     expect(data[:data][:attributes][:forecast][:summary]).to be_a String
-    expect(data[:data][:attributes][:forecast][:temperature]).to be_a Float
+    expect(data[:data][:attributes][:forecast][:temperature]).to be_a String
 
     expect(data[:data][:attributes][:total_books_found]).to be_a Integer
     expect(data[:data][:attributes][:books]).to be_an Array
