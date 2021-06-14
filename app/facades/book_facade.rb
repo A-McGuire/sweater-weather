@@ -12,14 +12,14 @@ class BookFacade
         total_books_found: data[:numFound],
         books: data[:docs].map do |book|
           {
-            isbn: data[:isbn],
-            title: data[:title],
-            publisher: data[:publisher]
+            isbn: book[:isbn],
+            title: book[:title],
+            publisher: book[:publisher]
           }
         end
       }
 
-      OpenStruct.new(id: nil, data: books)
+      x = OpenStruct.new(id: nil, data: books)
     end
   end
 end

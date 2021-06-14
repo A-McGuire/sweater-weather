@@ -17,7 +17,7 @@ RSpec.describe 'book facade', :vcr do
     expect(books.data[:forecast].keys).to eq([:summary, :temperature])
     expect(books.data[:forecast][:summary]).to be_a String
     expect(books.data[:forecast][:temperature]).to be_a String
-
+    
     expect(books.data[:total_books_found]).to be_a Integer
     expect(books.data[:books]).to be_an Array
     expect(books.data[:books].first.keys).to eq([:isbn, :title, :publisher])
