@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get '/forcast', to: 'weather#forcast'
+      get '/forecast', to: 'weather#forecast'
       get '/backgrounds', to: 'image#background'
       get '/book-search', to: 'books#index'
     end

@@ -1,4 +1,4 @@
-class ForcastFacade
+class ForecastFacade
   class << self
     def location_weather_data(address)
       location = MapQuestService.get_location_details(address)

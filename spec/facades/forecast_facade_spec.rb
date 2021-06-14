@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'forcast facade', :vcr do
+RSpec.describe 'forecast facade', :vcr do
   it 'creates an object with the correct attributes' do
-    data = ForcastFacade.location_weather_data('denver, co')
+    data = ForecastFacade.location_weather_data('denver, co')
 
     expect(data.id).to eq(nil)
     

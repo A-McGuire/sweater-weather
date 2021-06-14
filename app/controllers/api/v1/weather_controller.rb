@@ -1,7 +1,7 @@
 class Api::V1::WeatherController < ApplicationController
-  def forcast
+  def forecast
     return render status: 400 if params[:location].nil? || params[:location] == ''
-    forcast = ForcastFacade.location_weather_data(params[:location])
-    render json: ForcastSerializer.new(forcast).serializable_hash
+    forecast = ForecastFacade.location_weather_data(params[:location])
+    render json: ForecastSerializer.new(forecast).serializable_hash
   end
 end

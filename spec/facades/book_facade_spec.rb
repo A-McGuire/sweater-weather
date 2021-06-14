@@ -9,14 +9,14 @@ RSpec.describe 'book facade', :vcr do
     expect(books.data.keys.count).to eq(4)
     expect(books.data.keys)
     .to eq([
-      :destination, :forcast, :total_books_found, :books
+      :destination, :forecast, :total_books_found, :books
       ])
     
     expect(books.data[:destination]).to be_a String
-    expect(books.data[:forcast]).to be_a Hash
-    expect(books.data[:forcast].keys).to eq([:summary, :temperature])
-    expect(books.data[:forcast][:summary]).to be_a String
-    expect(books.data[:forcast][:temperature]).to be_a String
+    expect(books.data[:forecast]).to be_a Hash
+    expect(books.data[:forecast].keys).to eq([:summary, :temperature])
+    expect(books.data[:forecast][:summary]).to be_a String
+    expect(books.data[:forecast][:temperature]).to be_a String
 
     expect(books.data[:total_books_found]).to be_a Integer
     expect(books.data[:books]).to be_an Array
