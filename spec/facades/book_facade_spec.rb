@@ -20,7 +20,7 @@ RSpec.describe 'book facade', :vcr do
     expect(books.books.first[:publisher]).to be_an Array
 
     # TODO: revert test to old format once openstruct and serializer decide to play nice
-    #commented out to use later with openstruct
+    # commented out to use later with openstruct
     # expect(books.id).to eq(nil)
     # expect(books.data).to be_a Hash
     # expect(books.data.keys.count).to eq(4)
