@@ -31,5 +31,7 @@ RSpec.describe 'POST /users', :vcr do
     expect(resp[:data][:attributes][:travel_time]).to be_a String
     expect(resp[:data][:attributes][:weather_at_eta]).to be_a Hash
     expect(resp[:data][:attributes][:weather_at_eta].keys).to eq([:temperature, :conditions])
+    expect(resp[:data][:attributes][:weather_at_eta][:temperature]).to be_a Float
+    expect(resp[:data][:attributes][:weather_at_eta][:conditions]).to be_a String
   end
 end
