@@ -24,3 +24,4 @@ RSpec.describe 'POST /sessions' do
     expect(resp[:data][:attributes][:email]).to eq(user.email)
     expect(resp[:data][:attributes][:auth_token]).to eq(user.auth_token)
   end
+end
