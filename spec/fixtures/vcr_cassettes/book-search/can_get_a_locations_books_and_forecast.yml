@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.mapquestapi.com/geocoding/v1/address?key=gju7WvDq2cruwYYoAWJlAdeRr0AZLUdt&location=denver,%20co
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=gju7WvDq2cruwYYoAWJlAdeRr0AZLUdt&location=denver,co
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 14 Jun 2021 16:04:42 GMT
+      - Mon, 14 Jun 2021 16:27:23 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Mon, 14 Jun 2021 16:04:42 GMT
+      - Mon, 14 Jun 2021 16:27:23 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
@@ -43,7 +43,7 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=4E3E65319A38812403549982A39E6F46; Path=/; HttpOnly
+      - JSESSIONID=8D96A4EA39795D1E1E83E3FBE40A1D69; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -52,11 +52,10 @@ http_interactions:
       encoding: UTF-8
       string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
-        2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"denver,
-        co"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Denver","adminArea5Type":"City","adminArea4":"Denver
-        County","adminArea4Type":"County","adminArea3":"CO","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282041090","unknownInput":"","type":"s","latLng":{"lat":39.738453,"lng":-104.984853},"displayLatLng":{"lat":39.738453,"lng":-104.984853},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=gju7WvDq2cruwYYoAWJlAdeRr0AZLUdt&type=map&size=225,160&locations=39.738453,-104.984853|marker-sm-50318A-1&scalebar=true&zoom=12&rand=151732007"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"","adminArea5Type":"City","adminArea4":"Denver
-        County","adminArea4Type":"County","adminArea3":"CO","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A4XAX","geocodeQuality":"COUNTY","dragPoint":false,"sideOfStreet":"N","linkId":"282932003","unknownInput":"","type":"s","latLng":{"lat":39.738453,"lng":-104.984853},"displayLatLng":{"lat":39.738453,"lng":-104.984853},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=gju7WvDq2cruwYYoAWJlAdeRr0AZLUdt&type=map&size=225,160&locations=39.738453,-104.984853|marker-sm-50318A-2&scalebar=true&zoom=9&rand=1641572798"}]}]}'
-  recorded_at: Mon, 14 Jun 2021 16:04:42 GMT
+        2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"denver,co"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Denver","adminArea5Type":"City","adminArea4":"Denver
+        County","adminArea4Type":"County","adminArea3":"CO","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282041090","unknownInput":"","type":"s","latLng":{"lat":39.738453,"lng":-104.984853},"displayLatLng":{"lat":39.738453,"lng":-104.984853},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=gju7WvDq2cruwYYoAWJlAdeRr0AZLUdt&type=map&size=225,160&locations=39.738453,-104.984853|marker-sm-50318A-1&scalebar=true&zoom=12&rand=1555378897"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"","adminArea5Type":"City","adminArea4":"Denver
+        County","adminArea4Type":"County","adminArea3":"CO","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A4XAX","geocodeQuality":"COUNTY","dragPoint":false,"sideOfStreet":"N","linkId":"282932003","unknownInput":"","type":"s","latLng":{"lat":39.738453,"lng":-104.984853},"displayLatLng":{"lat":39.738453,"lng":-104.984853},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=gju7WvDq2cruwYYoAWJlAdeRr0AZLUdt&type=map&size=225,160&locations=39.738453,-104.984853|marker-sm-50318A-2&scalebar=true&zoom=9&rand=1756703067"}]}]}'
+  recorded_at: Mon, 14 Jun 2021 16:27:23 GMT
 - request:
     method: get
     uri: https://api.openweathermap.org/data/2.5/onecall?appid=ce9a8287316d4c15faaf9345b0af413a&exclude=minutely,alerts&lat=39.738453&lon=-104.984853&units=imperial
@@ -78,11 +77,11 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Mon, 14 Jun 2021 16:04:42 GMT
+      - Mon, 14 Jun 2021 16:27:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '17485'
+      - '17481'
       Connection:
       - keep-alive
       X-Cache-Key:
@@ -95,12 +94,12 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"lat":39.7385,"lon":-104.9849,"timezone":"America/Denver","timezone_offset":-21600,"current":{"dt":1623686644,"sunrise":1623670286,"sunset":1623724156,"temp":79.83,"feels_like":79.83,"pressure":1011,"humidity":45,"dew_point":56.61,"uvi":6.44,"clouds":0,"visibility":10000,"wind_speed":1.99,"wind_deg":238,"wind_gust":3,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}]},"hourly":[{"dt":1623686400,"temp":79.83,"feels_like":79.83,"pressure":1011,"humidity":45,"dew_point":56.61,"uvi":6.44,"clouds":0,"visibility":10000,"wind_speed":2.57,"wind_deg":138,"wind_gust":3.13,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"pop":0},{"dt":1623690000,"temp":81.61,"feels_like":81.12,"pressure":1011,"humidity":40,"dew_point":54.97,"uvi":9.15,"clouds":0,"visibility":10000,"wind_speed":3.87,"wind_deg":108,"wind_gust":3.56,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"pop":0},{"dt":1623693600,"temp":85.1,"feels_like":83.32,"pressure":1011,"humidity":33,"dew_point":52.79,"uvi":11.16,"clouds":0,"visibility":10000,"wind_speed":6.2,"wind_deg":90,"wind_gust":5.35,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"pop":0},{"dt":1623697200,"temp":89.69,"feels_like":86.52,"pressure":1010,"humidity":24,"dew_point":48.13,"uvi":11.98,"clouds":0,"visibility":10000,"wind_speed":7.76,"wind_deg":73,"wind_gust":6.49,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"pop":0},{"dt":1623700800,"temp":93.94,"feels_like":89.6,"pressure":1009,"humidity":15,"dew_point":39.31,"uvi":11.24,"clouds":0,"visibility":10000,"wind_speed":10.18,"wind_deg":70,"wind_gust":9.24,"weather":[{"id":800,"main":"Clear","description":"clear
+      string: '{"lat":39.7385,"lon":-104.9849,"timezone":"America/Denver","timezone_offset":-21600,"current":{"dt":1623688044,"sunrise":1623670286,"sunset":1623724156,"temp":81.05,"feels_like":81,"pressure":1011,"humidity":43,"dew_point":56.46,"uvi":6.44,"clouds":0,"visibility":10000,"wind_speed":1.99,"wind_deg":223,"wind_gust":3,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}]},"hourly":[{"dt":1623686400,"temp":81.05,"feels_like":81,"pressure":1011,"humidity":43,"dew_point":56.46,"uvi":6.44,"clouds":0,"visibility":10000,"wind_speed":2.57,"wind_deg":138,"wind_gust":3.13,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1623690000,"temp":82.58,"feels_like":81.72,"pressure":1011,"humidity":38,"dew_point":54.43,"uvi":9.15,"clouds":0,"visibility":10000,"wind_speed":3.87,"wind_deg":108,"wind_gust":3.56,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1623693600,"temp":85.84,"feels_like":83.88,"pressure":1011,"humidity":32,"dew_point":52.59,"uvi":11.16,"clouds":0,"visibility":10000,"wind_speed":6.2,"wind_deg":90,"wind_gust":5.35,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1623697200,"temp":90.18,"feels_like":86.86,"pressure":1010,"humidity":23,"dew_point":47.41,"uvi":11.98,"clouds":0,"visibility":10000,"wind_speed":7.76,"wind_deg":73,"wind_gust":6.49,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1623700800,"temp":94.19,"feels_like":89.83,"pressure":1009,"humidity":15,"dew_point":39.51,"uvi":11.24,"clouds":0,"visibility":10000,"wind_speed":10.18,"wind_deg":70,"wind_gust":9.24,"weather":[{"id":800,"main":"Clear","description":"clear
         sky","icon":"01d"}],"pop":0},{"dt":1623704400,"temp":98.26,"feels_like":92.95,"pressure":1009,"humidity":8,"dew_point":26.26,"uvi":9.21,"clouds":0,"visibility":10000,"wind_speed":11.52,"wind_deg":72,"wind_gust":10.69,"weather":[{"id":800,"main":"Clear","description":"clear
         sky","icon":"01d"}],"pop":0},{"dt":1623708000,"temp":98.2,"feels_like":92.89,"pressure":1009,"humidity":8,"dew_point":26.87,"uvi":6.49,"clouds":0,"visibility":10000,"wind_speed":12.48,"wind_deg":72,"wind_gust":11.61,"weather":[{"id":800,"main":"Clear","description":"clear
         sky","icon":"01d"}],"pop":0},{"dt":1623711600,"temp":97.27,"feels_like":92.16,"pressure":1009,"humidity":9,"dew_point":28.51,"uvi":3.8,"clouds":0,"visibility":10000,"wind_speed":12.53,"wind_deg":74,"wind_gust":11.34,"weather":[{"id":800,"main":"Clear","description":"clear
@@ -144,7 +143,7 @@ http_interactions:
         clouds","icon":"04d"}],"pop":0},{"dt":1623848400,"temp":75.45,"feels_like":74.01,"pressure":1014,"humidity":28,"dew_point":40.1,"uvi":0.55,"clouds":19,"visibility":10000,"wind_speed":5.1,"wind_deg":214,"wind_gust":6.51,"weather":[{"id":801,"main":"Clouds","description":"few
         clouds","icon":"02d"}],"pop":0},{"dt":1623852000,"temp":80.91,"feels_like":79.25,"pressure":1013,"humidity":22,"dew_point":37.9,"uvi":1.72,"clouds":20,"visibility":10000,"wind_speed":5.21,"wind_deg":215,"wind_gust":6.82,"weather":[{"id":801,"main":"Clouds","description":"few
         clouds","icon":"02d"}],"pop":0},{"dt":1623855600,"temp":86.72,"feels_like":83.28,"pressure":1012,"humidity":17,"dew_point":36.1,"uvi":3.75,"clouds":25,"visibility":10000,"wind_speed":4.18,"wind_deg":214,"wind_gust":4.81,"weather":[{"id":802,"main":"Clouds","description":"scattered
-        clouds","icon":"03d"}],"pop":0}],"daily":[{"dt":1623697200,"sunrise":1623670286,"sunset":1623724156,"moonrise":1623683340,"moonset":0,"moon_phase":0.14,"temp":{"day":89.69,"min":68.61,"max":98.26,"night":81.25,"eve":93.65,"morn":74.88},"feels_like":{"day":86.52,"night":79.9,"eve":89.15,"morn":74.23},"pressure":1010,"humidity":24,"dew_point":48.13,"wind_speed":12.53,"wind_deg":74,"wind_gust":21.61,"weather":[{"id":800,"main":"Clear","description":"clear
+        clouds","icon":"03d"}],"pop":0}],"daily":[{"dt":1623697200,"sunrise":1623670286,"sunset":1623724156,"moonrise":1623683340,"moonset":0,"moon_phase":0.14,"temp":{"day":90.18,"min":68.61,"max":98.26,"night":81.25,"eve":93.65,"morn":75.36},"feels_like":{"day":86.86,"night":79.9,"eve":89.15,"morn":74.71},"pressure":1010,"humidity":23,"dew_point":47.41,"wind_speed":12.53,"wind_deg":74,"wind_gust":21.61,"weather":[{"id":800,"main":"Clear","description":"clear
         sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":11.98},{"dt":1623783600,"sunrise":1623756687,"sunset":1623810579,"moonrise":1623773580,"moonset":1623737100,"moon_phase":0.17,"temp":{"day":98.2,"min":72.99,"max":99.82,"night":78.04,"eve":84.47,"morn":75.27},"feels_like":{"day":93.22,"night":77.11,"eve":82.02,"morn":73.81},"pressure":1010,"humidity":11,"dew_point":34.77,"wind_speed":19.17,"wind_deg":170,"wind_gust":29.35,"weather":[{"id":800,"main":"Clear","description":"clear
         sky","icon":"01d"}],"clouds":0,"pop":0.2,"uvi":12.07},{"dt":1623870000,"sunrise":1623843090,"sunset":1623897001,"moonrise":1623864000,"moonset":1623825420,"moon_phase":0.2,"temp":{"day":99.23,"min":72.84,"max":99.23,"night":78.94,"eve":84.85,"morn":75.45},"feels_like":{"day":93.9,"night":78.94,"eve":82.17,"morn":74.01},"pressure":1009,"humidity":9,"dew_point":30.49,"wind_speed":16.75,"wind_deg":148,"wind_gust":23.4,"weather":[{"id":804,"main":"Clouds","description":"overcast
         clouds","icon":"04d"}],"clouds":100,"pop":0.24,"uvi":11.47},{"dt":1623956400,"sunrise":1623929495,"sunset":1623983420,"moonrise":1623954420,"moonset":1623913620,"moon_phase":0.25,"temp":{"day":96.58,"min":72.9,"max":96.58,"night":78.04,"eve":79.2,"morn":72.9},"feels_like":{"day":91.71,"night":77.05,"eve":79.2,"morn":71.35},"pressure":1007,"humidity":11,"dew_point":32.94,"wind_speed":17.81,"wind_deg":203,"wind_gust":27.49,"weather":[{"id":500,"main":"Rain","description":"light
@@ -153,10 +152,10 @@ http_interactions:
         rain","icon":"10d"}],"clouds":93,"pop":0.84,"rain":6.15,"uvi":11},{"dt":1624215600,"sunrise":1624188720,"sunset":1624242668,"moonrise":1624226340,"moonset":1624177680,"moon_phase":0.34,"temp":{"day":90.03,"min":64.49,"max":90.03,"night":74.17,"eve":77.92,"morn":64.49},"feels_like":{"day":85.95,"night":73.02,"eve":76.82,"morn":62.94},"pressure":1004,"humidity":13,"dew_point":33.57,"wind_speed":14.92,"wind_deg":186,"wind_gust":14.58,"weather":[{"id":500,"main":"Rain","description":"light
         rain","icon":"10d"}],"clouds":43,"pop":0.52,"rain":0.19,"uvi":11},{"dt":1624302000,"sunrise":1624275132,"sunset":1624329081,"moonrise":1624317300,"moonset":1624265940,"moon_phase":0.38,"temp":{"day":90.03,"min":61.63,"max":90.03,"night":61.63,"eve":72.37,"morn":64.18},"feels_like":{"day":85.95,"night":61.3,"eve":71.56,"morn":62.98},"pressure":998,"humidity":13,"dew_point":32.67,"wind_speed":26.8,"wind_deg":309,"wind_gust":32.12,"weather":[{"id":500,"main":"Rain","description":"light
         rain","icon":"10d"}],"clouds":28,"pop":0.91,"rain":1.72,"uvi":11}]}'
-  recorded_at: Mon, 14 Jun 2021 16:04:42 GMT
+  recorded_at: Mon, 14 Jun 2021 16:27:24 GMT
 - request:
     method: get
-    uri: http://openlibrary.org/search.json?limit=5&q=denver,%20co
+    uri: http://openlibrary.org/search.json?limit=5&q=denver,co
     body:
       encoding: US-ASCII
       string: ''
@@ -175,7 +174,7 @@ http_interactions:
       Server:
       - nginx/1.18.0 (Ubuntu)
       Date:
-      - Mon, 14 Jun 2021 16:04:43 GMT
+      - Mon, 14 Jun 2021 16:27:26 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -189,14 +188,14 @@ http_interactions:
       Access-Control-Max-Age:
       - '86400'
       X-Ol-Stats:
-      - '"SR 1 0.206 TT 0 0.208"'
+      - '"SR 1 1.574 TT 0 1.577"'
       Referrer-Policy:
       - no-referrer-when-downgrade
     body:
       encoding: UTF-8
       string: |-
         {
-            "numFound": 606,
+            "numFound": 35992,
             "start": 0,
             "numFoundExact": true,
             "docs": [
@@ -256,168 +255,6 @@ http_interactions:
                     "_version_": 1700720295581581317,
                     "author_facet": [
                         "OL2843451A Universal Map"
-                    ]
-                },
-                {
-                    "key": "/works/OL896607W",
-                    "text": [
-                        "/works/OL896607W",
-                        "Denver west, CO and Bailey, CO: Denver, CO",
-                        "39105, digital raster graphic data",
-                        "Denver west, CO and Bailey, CO: Denver, CO ",
-                        "OL10945157M",
-                        "9780607620054",
-                        "0607620056",
-                        "USGS Branch of Distribution",
-                        "OL79165A",
-                        "United States Geological Survey",
-                        "Geological Survey (U.S.)",
-                        "Geological Survey. (U.S.)",
-                        "United States. Geological survey.",
-                        "United States. Geological Survey",
-                        "United States. Geological Survey.",
-                        "Geological Survey (U. S.)",
-                        "Geological Survey (U.S.) 088",
-                        "U.S. Geological Survey",
-                        "Geological Survey (U .S.)"
-                    ],
-                    "type": "work",
-                    "seed": [
-                        "/books/OL10945157M",
-                        "/works/OL896607W",
-                        "/authors/OL79165A"
-                    ],
-                    "title": "Denver west, CO and Bailey, CO: Denver, CO",
-                    "title_suggest": "Denver west, CO and Bailey, CO: Denver, CO",
-                    "subtitle": "39105, digital raster graphic data",
-                    "has_fulltext": false,
-                    "edition_count": 1,
-                    "edition_key": [
-                        "OL10945157M"
-                    ],
-                    "publish_date": [
-                        "1996"
-                    ],
-                    "publish_year": [
-                        1996
-                    ],
-                    "first_publish_year": 1996,
-                    "isbn": [
-                        "9780607620054",
-                        "0607620056"
-                    ],
-                    "last_modified_i": 1272517172,
-                    "ebook_count_i": 0,
-                    "publisher": [
-                        "USGS Branch of Distribution"
-                    ],
-                    "language": [
-                        "eng"
-                    ],
-                    "author_key": [
-                        "OL79165A"
-                    ],
-                    "author_name": [
-                        "United States Geological Survey"
-                    ],
-                    "author_alternative_name": [
-                        "Geological Survey (U.S.)",
-                        "Geological Survey. (U.S.)",
-                        "United States. Geological survey.",
-                        "United States. Geological Survey",
-                        "United States. Geological Survey.",
-                        "Geological Survey (U. S.)",
-                        "Geological Survey (U.S.) 088",
-                        "U.S. Geological Survey",
-                        "Geological Survey (U .S.)"
-                    ],
-                    "publisher_facet": [
-                        "USGS Branch of Distribution"
-                    ],
-                    "_version_": 1700720896589692931,
-                    "author_facet": [
-                        "OL79165A United States Geological Survey"
-                    ]
-                },
-                {
-                    "key": "/works/OL896605W",
-                    "text": [
-                        "/works/OL896605W",
-                        "Denver East, CO and Castle Rock, CO: Denver, CO",
-                        "39104, digital raster graphic data",
-                        "Denver East, CO and Castle Rock, CO: Denver, CO ",
-                        "OL10945156M",
-                        "0607620048",
-                        "9780607620047",
-                        "USGS Branch of Distribution",
-                        "OL79165A",
-                        "United States Geological Survey",
-                        "Geological Survey (U.S.)",
-                        "Geological Survey. (U.S.)",
-                        "United States. Geological survey.",
-                        "United States. Geological Survey",
-                        "United States. Geological Survey.",
-                        "Geological Survey (U. S.)",
-                        "Geological Survey (U.S.) 088",
-                        "U.S. Geological Survey",
-                        "Geological Survey (U .S.)"
-                    ],
-                    "type": "work",
-                    "seed": [
-                        "/books/OL10945156M",
-                        "/works/OL896605W",
-                        "/authors/OL79165A"
-                    ],
-                    "title": "Denver East, CO and Castle Rock, CO: Denver, CO",
-                    "title_suggest": "Denver East, CO and Castle Rock, CO: Denver, CO",
-                    "subtitle": "39104, digital raster graphic data",
-                    "has_fulltext": false,
-                    "edition_count": 1,
-                    "edition_key": [
-                        "OL10945156M"
-                    ],
-                    "publish_date": [
-                        "1996"
-                    ],
-                    "publish_year": [
-                        1996
-                    ],
-                    "first_publish_year": 1996,
-                    "isbn": [
-                        "0607620048",
-                        "9780607620047"
-                    ],
-                    "last_modified_i": 1272517172,
-                    "ebook_count_i": 0,
-                    "publisher": [
-                        "USGS Branch of Distribution"
-                    ],
-                    "language": [
-                        "eng"
-                    ],
-                    "author_key": [
-                        "OL79165A"
-                    ],
-                    "author_name": [
-                        "United States Geological Survey"
-                    ],
-                    "author_alternative_name": [
-                        "Geological Survey (U.S.)",
-                        "Geological Survey. (U.S.)",
-                        "United States. Geological survey.",
-                        "United States. Geological Survey",
-                        "United States. Geological Survey.",
-                        "Geological Survey (U. S.)",
-                        "Geological Survey (U.S.) 088",
-                        "U.S. Geological Survey",
-                        "Geological Survey (U .S.)"
-                    ],
-                    "publisher_facet": [
-                        "USGS Branch of Distribution"
-                    ],
-                    "_version_": 1700720895856738305,
-                    "author_facet": [
-                        "OL79165A United States Geological Survey"
                     ]
                 },
                 {
@@ -544,9 +381,192 @@ http_interactions:
                     "author_facet": [
                         "OL882946A Laura Ryder"
                     ]
+                },
+                {
+                    "key": "/works/OL19500062W",
+                    "text": [
+                        "/works/OL19500062W",
+                        "Photovoltaic safety, Denver, CO, 1988",
+                        "Photovoltaic safety.",
+                        "OL2061373M",
+                        "editor, Werner Luft.",
+                        "88042854",
+                        "Solar Energy Research Institute.",
+                        "Photovoltaics Safety Conference (2nd : 1988 : Denver, Colo.)",
+                        "Luft, Werner.",
+                        "9780883183663",
+                        "0883183668",
+                        "American Institute of Physics",
+                        "OL714790A",
+                        "Werner Luft",
+                        "Photovoltaic cells",
+                        "Safety measures",
+                        "Solar cells",
+                        "Congresses",
+                        "Design and construction"
+                    ],
+                    "type": "work",
+                    "seed": [
+                        "/books/OL2061373M",
+                        "/works/OL19500062W",
+                        "/subjects/photovoltaic_cells",
+                        "/subjects/safety_measures",
+                        "/subjects/solar_cells",
+                        "/subjects/congresses",
+                        "/subjects/design_and_construction",
+                        "/authors/OL714790A"
+                    ],
+                    "title": "Photovoltaic safety, Denver, CO, 1988",
+                    "title_suggest": "Photovoltaic safety, Denver, CO, 1988",
+                    "has_fulltext": false,
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL2061373M"
+                    ],
+                    "publish_date": [
+                        "1988"
+                    ],
+                    "publish_year": [
+                        1988
+                    ],
+                    "first_publish_year": 1988,
+                    "lccn": [
+                        "88042854"
+                    ],
+                    "publish_place": [
+                        "New York"
+                    ],
+                    "contributor": [
+                        "Solar Energy Research Institute.",
+                        "Photovoltaics Safety Conference (2nd : 1988 : Denver, Colo.)",
+                        "Luft, Werner."
+                    ],
+                    "lcc": [
+                        "TK-8322.00000000.P46 1988"
+                    ],
+                    "ddc": [
+                        "621.31244"
+                    ],
+                    "isbn": [
+                        "9780883183663",
+                        "0883183668"
+                    ],
+                    "last_modified_i": 1604827192,
+                    "ebook_count_i": 0,
+                    "cover_edition_key": "OL2061373M",
+                    "cover_i": 4745684,
+                    "publisher": [
+                        "American Institute of Physics"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL714790A"
+                    ],
+                    "author_name": [
+                        "Werner Luft"
+                    ],
+                    "subject": [
+                        "Photovoltaic cells",
+                        "Safety measures",
+                        "Solar cells",
+                        "Congresses",
+                        "Design and construction"
+                    ],
+                    "id_goodreads": [
+                        "3793862"
+                    ],
+                    "publisher_facet": [
+                        "American Institute of Physics"
+                    ],
+                    "subject_facet": [
+                        "Congresses",
+                        "Design and construction",
+                        "Photovoltaic cells",
+                        "Safety measures",
+                        "Solar cells"
+                    ],
+                    "_version_": 1700705535019450369,
+                    "lcc_sort": "TK-8322.00000000.P46 1988",
+                    "author_facet": [
+                        "OL714790A Werner Luft"
+                    ],
+                    "subject_key": [
+                        "congresses",
+                        "design_and_construction",
+                        "photovoltaic_cells",
+                        "safety_measures",
+                        "solar_cells"
+                    ],
+                    "ddc_sort": "621.31244"
+                },
+                {
+                    "key": "/works/OL8541064W",
+                    "text": [
+                        "/works/OL8541064W",
+                        "Insight Fleximap Denver, CO (Insight Fleximaps)",
+                        "OL9197762M",
+                        "64038908",
+                        "9812582622",
+                        "9789812582621",
+                        "American Map Corporation",
+                        "OL2859862A",
+                        "American Map Corp"
+                    ],
+                    "type": "work",
+                    "seed": [
+                        "/books/OL9197762M",
+                        "/works/OL8541064W",
+                        "/authors/OL2859862A"
+                    ],
+                    "title": "Insight Fleximap Denver, CO (Insight Fleximaps)",
+                    "title_suggest": "Insight Fleximap Denver, CO (Insight Fleximaps)",
+                    "has_fulltext": false,
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL9197762M"
+                    ],
+                    "publish_date": [
+                        "January 30, 2006"
+                    ],
+                    "publish_year": [
+                        2006
+                    ],
+                    "first_publish_year": 2006,
+                    "oclc": [
+                        "64038908"
+                    ],
+                    "isbn": [
+                        "9812582622",
+                        "9789812582621"
+                    ],
+                    "last_modified_i": 1304090516,
+                    "ebook_count_i": 0,
+                    "cover_edition_key": "OL9197762M",
+                    "cover_i": 2302739,
+                    "publisher": [
+                        "American Map Corporation"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL2859862A"
+                    ],
+                    "author_name": [
+                        "American Map Corp"
+                    ],
+                    "publisher_facet": [
+                        "American Map Corporation"
+                    ],
+                    "_version_": 1700720351972950018,
+                    "author_facet": [
+                        "OL2859862A American Map Corp"
+                    ]
                 }
             ],
-            "num_found": 606
+            "num_found": 35992
         }
-  recorded_at: Mon, 14 Jun 2021 16:04:43 GMT
+  recorded_at: Mon, 14 Jun 2021 16:27:26 GMT
 recorded_with: VCR 6.0.0
