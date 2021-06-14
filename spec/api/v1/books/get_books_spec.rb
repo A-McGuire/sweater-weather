@@ -31,7 +31,27 @@ RSpec.describe '/book-search', :vcr do
     expect(data[:data][:attributes][:books].first).to be_a Hash
     expect(data[:data][:attributes][:books].first.keys).to eq([:isbn, :title, :publisher])
     expect(data[:data][:attributes][:books].first[:isbn]).to be_an Array
-    expect(data[:data][:attributes][:books].first[:title]).to be_an String
-    expect(data[:data][:attributes][:books].first[:publisher]).to be_an String
+    expect(data[:data][:attributes][:books].first[:title]).to be_a String
+    expect(data[:data][:attributes][:books].first[:publisher]).to be_an Array
+  end
+
+  describe 'sad path' do
+    it 'returns a 400 if there is no location param provided' do
+      get '/api/v1/book-search?quantity=5'
+
+      data = JSON.parse(response.body, symbolize_names: true)
+      expect(response.status).to eq(400)
+      expect(data.keys).to eq([:error])
+      expect(data[:error]).to eq("location parameter required")
+    end
+
+    it 'returns a 400 if the location param is empty' do
+      get '/api/v1/book-search?location=&quantity=5'
+
+      data = JSON.parse(response.body, symbolize_names: true)
+      expect(response.status).to eq(400)
+      expect(data.keys).to eq([:error])
+      expect(data[:error]).to eq("location parameter required")
+    end
   end
 end
