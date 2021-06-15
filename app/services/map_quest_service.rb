@@ -1,11 +1,11 @@
-class MapQuestService
+class MapQuestService < GeneralService
   class << self
     def get_location_details(location)
       resp = conn.get('address') do |req|
         req.params['key'] = ENV['mapquest_key']
         req.params['location'] = location
       end
-      parse_data(resp)
+      GeneralService.parse_data(resp)
     end
 
     def get_directions(params)
@@ -14,7 +14,7 @@ class MapQuestService
         req.params['from'] = params[:origin]
         req.params['to'] = params[:destination]
       end
-      parse_data(resp)
+      GeneralService.parse_data(resp)
     end
 
     private
@@ -31,8 +31,8 @@ class MapQuestService
       end
     end
 
-    def parse_data(resp)
-      JSON.parse(resp.body, symbolize_names: true)
-    end
+    # def parse_data(resp)
+    #   JSON.parse(resp.body, symbolize_names: true)
+    # end
   end
 end
