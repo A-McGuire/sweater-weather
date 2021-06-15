@@ -15,7 +15,8 @@ Sweater Weather is a back end application designed to serve a front end applicat
 
 ### Endpoints
 
-- Forecast  
+- **Forecast**  
+
 Example request:
   ```
     GET /api/v1/forecast?location=denver,co
@@ -56,7 +57,8 @@ Example request:
       }
     ```
 
-- Backgrounds  
+- **Backgrounds**  
+
 Example Request:  
   ```
     GET /api/v1/backgrounds?location=denver,co
@@ -87,7 +89,8 @@ Example Request:
       }
     ```
   
-- User Registration  
+- **User Registration**  
+
 Example Request:  
   ```
     POST /api/v1/users
@@ -115,7 +118,8 @@ Example Request:
       }
     ```
   
-- User Login  
+- **User Login**  
+
 Example Request:  
   ```
     POST /api/v1/sessions
@@ -142,7 +146,8 @@ Example Request:
       }
     ```
   
-- Road Trip  
+- **Road Trip**  
+
 Example Request:  
   ```
     {
