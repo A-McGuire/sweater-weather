@@ -36,17 +36,4 @@ RSpec.describe 'road trip facade' do
       expect(RoadTripFacade.travel_time_to_nearest_hour(172800)).to eq(48)
     end
   end
-
-  describe 'impossible_route helper method' do
-    it 'recieves route params and returns an object with the correct attributes' do
-      params = { origin: "Denver, CO", destination: "London, UK" }
-      data = RoadTripFacade.impossible_route(params)
-      expect(data.id).to eq(nil)
-      expect(data.start_city).to be_a String
-      expect(data.end_city).to be_a String
-      expect(data.travel_time).to eq('Impossible route')
-      expect(data.weather_at_eta).to be_a Hash
-      expect(data.weather_at_eta.keys).to eq([])
-    end
-  end
 end
