@@ -1,20 +1,21 @@
 class RoadTripFacade
   class << self
     def get_trip_details(params)
-      start_city = params[:origin]
-      end_city = params[:destination]
-
-      @directions = MapQuestService.get_directions(params)
-
-      if @directions[:route][:routeError][:errorCode] == 2
+      if directions(params)[:route][:routeError][:errorCode] == 2
         travel_time = 'Impossible route'
         weather_at_eta = {}
       else
-        travel_time_nearest_hour = travel_time_to_nearest_hour(@directions[:route][:realTime])
-        forcast = ForcastFacade.location_weather_data(params[:destination], travel_time_nearest_hour)
-        travel_time = @directions[:route][:formattedTime]
-        weather_at_eta = set_weather(forcast, travel_time_nearest_hour)
+        travel_time_nearest_hour = travel_time_to_nearest_hour(directions(params)[:route][:realTime])
+        forcast = destination_forcast(params[:destination], travel_time_nearest_hour)
+        travel_time = directions(params)[:route][:formattedTime]
+        weather_at_eta = {
+          temperature: forcast[:hourly_weather][travel_time_nearest_hour - 1][:temperature],
+          conditions: forcast[:hourly_weather][travel_time_nearest_hour - 1][:conditions]
+        }
       end
+
+      start_city = params[:origin]
+      end_city = params[:destination]
 
       OpenStruct.new(
         id: nil, start_city: start_city, end_city: end_city,
@@ -22,11 +23,16 @@ class RoadTripFacade
       )
     end
 
-    def set_weather(forcast, time)
-      {
-        temperature: forcast[:hourly_weather][time - 1][:temperature],
-        conditions: forcast[:hourly_weather][time - 1][:conditions]
-      }
+    def directions(params)
+      Rails.cache.fetch("Directions from #{params[:origin]} to #{params[:destination]}", expires_in: 1.hour) do
+        MapQuestService.get_directions(params)
+      end
+    end
+
+    def destination_forcast(destination, time)
+      Rails.cache.fetch("Forcast for #{destination}, in #{time} hours", expires_in: 1.hour) do
+        ForcastFacade.location_weather_data(destination, time)
+      end
     end
 
     def travel_time_to_nearest_hour(seconds)
