@@ -1,14 +1,12 @@
 # Sweater Weather API
 Sweater Weather is a back end application designed to serve a front end application with weather data for road trips.
 
-### External APIs
-```
-  http://www.mapquestapi.com/geocoding/v1/address
-  http://www.mapquestapi.com/directions/v2/route
-  https://api.openweathermap.org/data/2.5/onecall
-  https://api.unsplash.com/search/photos
-```
 ### Learning Goals
+- Expose an API that aggregates data from multiple external APIs
+- Expose an API that requires an authentication token
+- Expose an API for CRUD functionality
+- Determine completion criteria based on the needs of other developers
+- Research, select, and consume an API based on your needs as a developer
 
 ### This project was built with:
 
@@ -17,6 +15,9 @@ Sweater Weather is a back end application designed to serve a front end applicat
 * RSpec version - 3.10
 
 ### Set-up Instructions
+
+### Testing
+The full test suite can be run with the command `bundle exec rspec`
 
 ### Endpoints
 
@@ -176,5 +177,10 @@ Example Request:
       }
     ```
   
-
-### Testing
+### External APIs used
+```
+  http://www.mapquestapi.com/geocoding/v1/address
+  http://www.mapquestapi.com/directions/v2/route
+  https://api.openweathermap.org/data/2.5/onecall
+  https://api.unsplash.com/search/photos
+```
