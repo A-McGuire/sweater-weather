@@ -64,28 +64,28 @@ Example Request:
     Accept: application/json
   ```
 
-Example response:  
-  ```
-    "data": {
-            "id": null,
-            "type": "image",
-            "attributes": {
-                "image": {
-                    "location": "denver, co",
-                    "image_url_full": "https://images.unsplash.com/photo-1619856699906-09e1f58c98b1?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMzkzMDV8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMkMlMjBjb3xlbnwwfHx8fDE2MjM3OTczNzk&ixlib=rb-1.2.1&q=85",
-                    "image_url_regular": "https://images.unsplash.com/photo-1619856699906-09e1f58c98b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzkzMDV8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMkMlMjBjb3xlbnwwfHx8fDE2MjM3OTczNzk&ixlib=rb-1.2.1&q=80&w=1080",
-                    "image_url_small": "https://images.unsplash.com/photo-1619856699906-09e1f58c98b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzkzMDV8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMkMlMjBjb3xlbnwwfHx8fDE2MjM3OTczNzk&ixlib=rb-1.2.1&q=80&w=400",
-                    "image_url_thumb": "https://images.unsplash.com/photo-1619856699906-09e1f58c98b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzkzMDV8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMkMlMjBjb3xlbnwwfHx8fDE2MjM3OTczNzk&ixlib=rb-1.2.1&q=80&w=200",
-                    "credit": {
-                        "source": "unsplash.com",
-                        "author": "rdehamer",
-                        "author_profile": "https://api.unsplash.com/users/rdehamer"
-                    }
-                }
-            }
-        }
-    }
-  ```
+  Example response:  
+    ```
+      "data": {
+              "id": null,
+              "type": "image",
+              "attributes": {
+                  "image": {
+                      "location": "denver, co",
+                      "image_url_full": "https://images.unsplash.com/photo-1619856699906-09e1f58c98b1?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMzkzMDV8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMkMlMjBjb3xlbnwwfHx8fDE2MjM3OTczNzk&ixlib=rb-1.2.1&q=85",
+                      "image_url_regular": "https://images.unsplash.com/photo-1619856699906-09e1f58c98b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzkzMDV8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMkMlMjBjb3xlbnwwfHx8fDE2MjM3OTczNzk&ixlib=rb-1.2.1&q=80&w=1080",
+                      "image_url_small": "https://images.unsplash.com/photo-1619856699906-09e1f58c98b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzkzMDV8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMkMlMjBjb3xlbnwwfHx8fDE2MjM3OTczNzk&ixlib=rb-1.2.1&q=80&w=400",
+                      "image_url_thumb": "https://images.unsplash.com/photo-1619856699906-09e1f58c98b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzkzMDV8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMkMlMjBjb3xlbnwwfHx8fDE2MjM3OTczNzk&ixlib=rb-1.2.1&q=80&w=200",
+                      "credit": {
+                          "source": "unsplash.com",
+                          "author": "rdehamer",
+                          "author_profile": "https://api.unsplash.com/users/rdehamer"
+                      }
+                  }
+              }
+          }
+      }
+    ```
   
 - User Registration  
 Example Request:  
@@ -101,19 +101,19 @@ Example Request:
     }
   ```
 
-Example response:  
-  ```
-    {
-      "data": {
-          "id": "2",
-          "type": "users",
-          "attributes": {
-              "email": "123@example.com",
-              "api_key": "dnunhHUTL8j8crs68PhuEfqx"
-          }
-       }
-    }
-  ```
+  Example response:  
+    ```
+      {
+        "data": {
+            "id": "2",
+            "type": "users",
+            "attributes": {
+                "email": "123@example.com",
+                "api_key": "dnunhHUTL8j8crs68PhuEfqx"
+            }
+         }
+      }
+    ```
   
 - User Login  
 Example Request:  
@@ -128,19 +128,19 @@ Example Request:
     }
   ```
 
-Example response:  
-  ```
-    {
-        "data": {
-            "id": "2",
-            "type": "users",
-            "attributes": {
-                "email": "123@example.com",
-                "api_key": "dnunhHUTL8j8crs68PhuEfqx"
-            }
-        }
-    }
-  ```
+  Example response:  
+    ```
+      {
+          "data": {
+              "id": "2",
+              "type": "users",
+              "attributes": {
+                  "email": "123@example.com",
+                  "api_key": "dnunhHUTL8j8crs68PhuEfqx"
+              }
+          }
+      }
+    ```
   
 - Road Trip  
 Example Request:  
@@ -152,24 +152,24 @@ Example Request:
     }
   ```
 
-Example response:  
-  ```
-    {
-        "data": {
-            "id": null,
-            "type": "roadtrip",
-            "attributes": {
-                "start_city": "Denver,CO",
-                "end_city": "New york, NY",
-                "travel_time": "26:16:46",
-                "weather_at_eta": {
-                    "temperature": 70.47,
-                    "conditions": "clear sky"
-                }
-            }
-        }
-    }
-  ```
+  Example response:  
+    ```
+      {
+          "data": {
+              "id": null,
+              "type": "roadtrip",
+              "attributes": {
+                  "start_city": "Denver,CO",
+                  "end_city": "New york, NY",
+                  "travel_time": "26:16:46",
+                  "weather_at_eta": {
+                      "temperature": 70.47,
+                      "conditions": "clear sky"
+                  }
+              }
+          }
+      }
+    ```
   
 
 ### Testing
