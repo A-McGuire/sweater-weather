@@ -20,19 +20,11 @@ class MapQuestService < GeneralService
     private
 
     def conn
-      Faraday.new(url: 'http://www.mapquestapi.com/geocoding/v1/') do |faraday|
-        faraday.headers['Accept'] = '*/*'
-      end
+      GeneralService.conn('http://www.mapquestapi.com/geocoding/v1/')
     end
 
     def conn_v2
-      Faraday.new(url: 'http://www.mapquestapi.com/directions/v2/') do |faraday|
-        faraday.headers['Accept'] = '*/*'
-      end
+      GeneralService.conn('http://www.mapquestapi.com/directions/v2/')
     end
-
-    # def parse_data(resp)
-    #   JSON.parse(resp.body, symbolize_names: true)
-    # end
   end
 end
