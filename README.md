@@ -22,8 +22,8 @@ OR download locally
 
 ```
 git clone git@github.com:A-McGuire/sweater-weather.git
+cd sweater_weather
 bundle install
-rails s
 ```
 
 ### Testing
