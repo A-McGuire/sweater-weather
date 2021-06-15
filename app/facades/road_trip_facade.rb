@@ -7,9 +7,11 @@ class RoadTripFacade
       else
         travel_time_nearest_hour = travel_time_to_nearest_hour(directions(params)[:route][:realTime])
         forcast = destination_forcast(params[:destination], travel_time_nearest_hour)
-        # forcast = ForcastFacade.location_weather_data(params[:destination], travel_time_nearest_hour)
         travel_time = directions(params)[:route][:formattedTime]
-        weather_at_eta = set_weather(forcast, travel_time_nearest_hour)
+        weather_at_eta = {
+          temperature: forcast[:hourly_weather][travel_time_nearest_hour - 1][:temperature],
+          conditions: forcast[:hourly_weather][travel_time_nearest_hour - 1][:conditions]
+        }
       end
 
       start_city = params[:origin]
@@ -22,22 +24,15 @@ class RoadTripFacade
     end
 
     def directions(params)
-      Rails.cache.fetch("Directions from #{params[:origin]} to #{params[:destination]}", expires_in: 1.hours) do
+      Rails.cache.fetch("Directions from #{params[:origin]} to #{params[:destination]}", expires_in: 1.hour) do
         MapQuestService.get_directions(params)
       end
     end
 
     def destination_forcast(destination, time)
-      Rails.cache.fetch("Forcast for #{destination}, in #{time} hours", expires_in: 1.hours) do
+      Rails.cache.fetch("Forcast for #{destination}, in #{time} hours", expires_in: 1.hour) do
         ForcastFacade.location_weather_data(destination, time)
       end
-    end
-
-    def set_weather(forcast, time)
-      {
-        temperature: forcast[:hourly_weather][time - 1][:temperature],
-        conditions: forcast[:hourly_weather][time - 1][:conditions]
-      }
     end
 
     def travel_time_to_nearest_hour(seconds)
