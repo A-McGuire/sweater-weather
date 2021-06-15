@@ -5,7 +5,7 @@ class RoadTripFacade
       end_city = params[:destination]
 
       @directions = MapQuestService.get_directions(params)
-      
+
       if @directions[:route][:routeError][:errorCode] == 2
         travel_time = 'Impossible route'
         weather_at_eta = {}
@@ -15,7 +15,7 @@ class RoadTripFacade
         travel_time = @directions[:route][:formattedTime]
         weather_at_eta = set_weather(forcast, travel_time_nearest_hour)
       end
-        
+
       OpenStruct.new(
         id: nil, start_city: start_city, end_city: end_city,
         travel_time: travel_time, weather_at_eta: weather_at_eta
