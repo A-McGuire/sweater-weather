@@ -13,6 +13,18 @@ RSpec.describe 'road trip facade' do
       expect(data.weather_at_eta).to be_a Hash
       expect(data.weather_at_eta.keys).to eq([:temperature, :conditions])
     end
+
+    it 'if the route is not possible it returns impossible for travel time and blank weather block' do
+      params = { origin: "Denver, CO", destination: "London, UK" }
+      data = RoadTripFacade.get_trip_details(params)
+      
+      expect(data.id).to eq(nil)
+      expect(data.start_city).to be_a String
+      expect(data.end_city).to be_a String
+      expect(data.travel_time).to eq('Impossible route')
+      expect(data.weather_at_eta).to be_a Hash
+      expect(data.weather_at_eta.keys).to eq([])
+    end
   end
 
   describe 'travel_time_to_nearest_hour helper method' do

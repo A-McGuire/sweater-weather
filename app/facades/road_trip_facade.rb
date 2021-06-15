@@ -5,8 +5,24 @@ class RoadTripFacade
       (minutes / 60).round
     end
 
+    def impossible_route(params)
+      start_city = params[:origin]
+      end_city = params[:destination]
+
+      travel_time = 'Impossible route'
+      weather_at_eta = {}
+
+      OpenStruct.new(
+        id: nil, start_city: start_city, end_city: end_city,
+        travel_time: travel_time, weather_at_eta: weather_at_eta
+      )
+    end
+
     def get_trip_details(params)
       @directions = MapQuestService.get_directions(params)
+      
+      return impossible_route(params) if @directions[:route][:routeError].present?
+
       travel_time_seconds = @directions[:route][:realTime]
       forcast = ForcastFacade.location_weather_data(params[:destination],
                                                     travel_time_to_nearest_hour(travel_time_seconds))
