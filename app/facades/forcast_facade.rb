@@ -3,7 +3,7 @@ class ForcastFacade
     def location_weather_data(address, hours = 8)
       location = MapQuestService.get_location_details(address)
       data = OpenWeatherService.get_location_weather(location[:results].first[:locations].first[:latLng])
-      
+
       current = {
         datetime: Time.zone.at(data[:current][:dt]).to_s,
         sunrise: Time.zone.at(data[:current][:sunrise]).to_s,
