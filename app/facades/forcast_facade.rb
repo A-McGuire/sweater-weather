@@ -1,8 +1,9 @@
 class ForcastFacade
   class << self
-    def location_weather_data(address)
+    def location_weather_data(address, hours = 8)
       location = MapQuestService.get_location_details(address)
       data = OpenWeatherService.get_location_weather(location[:results].first[:locations].first[:latLng])
+
       current = {
         datetime: Time.zone.at(data[:current][:dt]).to_s,
         sunrise: Time.zone.at(data[:current][:sunrise]).to_s,
@@ -28,7 +29,7 @@ class ForcastFacade
         }
       end
 
-      by_hour = data[:hourly].first(8).map do |hour|
+      by_hour = data[:hourly].first(hours).map do |hour|
         {
           time: Time.zone.at(hour[:dt]).strftime('%H:%M:%S'),
           temperature: hour[:temp],
