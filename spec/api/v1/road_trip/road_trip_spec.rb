@@ -7,7 +7,7 @@ RSpec.describe 'POST /users', :vcr do
     body = {
         origin: "Denver,CO",
         destination: "Estes Park, CO",
-        auth_token: "#{user.auth_token}"
+        api_key: "#{user.auth_token}"
     }
 
     post '/api/v1/road_trip', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
@@ -40,7 +40,36 @@ RSpec.describe 'POST /users', :vcr do
       body = {
           origin: "Denver,CO",
           destination: "Estes Park, CO",
-          auth_token: "123"
+          api_key: "123"
+      }
+
+      post '/api/v1/road_trip', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(401)
+    end
+
+    it 'returns a 401 if api key is empty' do
+      user = User.create!(email: 'whatever@example.com', password: 'password')
+
+      body = {
+          origin: "Denver,CO",
+          destination: "Estes Park, CO",
+          api_key: ""
+      }
+
+      post '/api/v1/road_trip', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(401)
+    end
+
+    it 'returns a 401 if api key is not sent' do
+      user = User.create!(email: 'whatever@example.com', password: 'password')
+
+      body = {
+          origin: "Denver,CO",
+          destination: "Estes Park, CO"
       }
 
       post '/api/v1/road_trip', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
