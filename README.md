@@ -15,6 +15,16 @@ Sweater Weather is a back end application designed to serve a front end applicat
 * RSpec version - 3.10
 
 ### Set-up Instructions
+You can either consume the endpoints provided here: https://pure-castle-58541.herokuapp.com/ 
+(please note this app has no front end to view)
+
+OR download locally
+
+```
+git clone git@github.com:A-McGuire/sweater-weather.git
+bundle install
+rails s
+```
 
 ### Testing
 The full test suite can be run with the command `bundle exec rspec`
