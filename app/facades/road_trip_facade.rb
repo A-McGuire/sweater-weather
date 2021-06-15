@@ -21,7 +21,7 @@ class RoadTripFacade
     def get_trip_details(params)
       @directions = MapQuestService.get_directions(params)
       
-      return impossible_route(params) if @directions[:route][:routeError].present?
+      return impossible_route(params) if @directions[:route][:routeError][:errorCode] == 2
 
       travel_time_seconds = @directions[:route][:realTime]
       forcast = ForcastFacade.location_weather_data(params[:destination],
