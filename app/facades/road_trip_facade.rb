@@ -9,11 +9,11 @@ class RoadTripFacade
       destination_forcast = ForcastFacade.location_weather_data(params[:destination])
       @directions = MapQuestService.get_directions(params)
       
-      
       forcast = ForcastFacade.location_weather_data(params[:destination], self.travel_time_to_nearest_hour(@directions[:route][:realTime]))
       
       start_city = params[:origin]  
       end_city = params[:destination]
+      
       travel_time = @directions[:route][:formattedTime]
       weather_at_eta = {
           temperature: forcast[:hourly_weather][self.travel_time_to_nearest_hour(@directions[:route][:realTime]) - 1][:temperature],
