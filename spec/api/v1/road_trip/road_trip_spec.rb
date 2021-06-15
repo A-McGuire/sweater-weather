@@ -7,7 +7,7 @@ RSpec.describe 'POST /users', :vcr do
     body = {
         origin: "Denver,CO",
         destination: "Estes Park, CO",
-        api_key: "#{user.auth_token}"
+        api_key: "#{user.api_key}"
     }
 
     post '/api/v1/road_trip', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }

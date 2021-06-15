@@ -20,9 +20,9 @@ RSpec.describe 'POST /sessions', :vcr do
     expect(resp[:data][:type]).to eq('users')
     expect(resp[:data][:id]).to eq(user.id.to_s)
     expect(resp[:data][:attributes]).to be_a Hash
-    expect(resp[:data][:attributes].keys).to eq([:email, :auth_token])
+    expect(resp[:data][:attributes].keys).to eq([:email, :api_key])
     expect(resp[:data][:attributes][:email]).to eq(user.email)
-    expect(resp[:data][:attributes][:auth_token]).to eq(user.auth_token)
+    expect(resp[:data][:attributes][:api_key]).to eq(user.api_key)
   end
 
   describe 'sad path' do

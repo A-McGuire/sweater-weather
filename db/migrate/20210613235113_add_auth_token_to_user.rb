@@ -1,6 +1,6 @@
 class AddAuthTokenToUser < ActiveRecord::Migration[5.2]
   def change
-    add_column :users, :auth_token, :string
-    add_index :users, :auth_token, unique: true
+    add_column :users, :api_key, :string
+    add_index :users, :api_key, unique: true
   end
 end
