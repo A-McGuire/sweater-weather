@@ -5,15 +5,13 @@ RSpec.describe 'POST /users', :vcr do
     user = User.create!(email: 'whatever@example.com', password: 'password')
 
     body = {
-        "origin": "Denver,CO",
-        "destination": "Estes Park, CO",
-        "auth_token": "#{user.auth_token}"
+        origin: "Denver,CO",
+        destination: "Estes Park, CO",
+        auth_token: "#{user.auth_token}"
     }
 
     post '/api/v1/road_trip', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
 
-    user = User.find_by(email: 'whatever@example.com')
-    
     expect(response).to be_successful
     expect(response.status).to eq(200)
 
@@ -33,5 +31,22 @@ RSpec.describe 'POST /users', :vcr do
     expect(resp[:data][:attributes][:weather_at_eta].keys).to eq([:temperature, :conditions])
     expect(resp[:data][:attributes][:weather_at_eta][:temperature]).to be_a Float
     expect(resp[:data][:attributes][:weather_at_eta][:conditions]).to be_a String
+  end
+
+  describe 'sad path' do
+    it 'returns a 401 if api key is invalid' do
+      user = User.create!(email: 'whatever@example.com', password: 'password')
+
+      body = {
+          origin: "Denver,CO",
+          destination: "Estes Park, CO",
+          auth_token: "123"
+      }
+
+      post '/api/v1/road_trip', params: body.to_json, headers: { "Content-Type": "application/json", "Accept": "application/json" }
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(401)
+    end
   end
 end
