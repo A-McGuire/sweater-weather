@@ -30,8 +30,7 @@ class RoadTripFacade
     end
 
     def travel_time_to_nearest_hour(seconds)
-      minutes = seconds / 60.0
-      (minutes / 60).round
+      (seconds / 3600.0).round
     end
   end
 end
