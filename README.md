@@ -2,7 +2,14 @@
 Sweater Weather is a back end application designed to serve a front end application with weather data for road trips.
 
 ### External APIs
-
+```
+  http://www.mapquestapi.com/geocoding/v1/address
+  http://www.mapquestapi.com/directions/v2/route
+  
+  https://api.openweathermap.org/data/2.5/onecall
+  
+  https://api.unsplash.com/search/photos
+```
 ### Learning Goals
 
 ### This project was built with:
