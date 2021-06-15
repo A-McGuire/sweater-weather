@@ -57,7 +57,6 @@ Example request:
     ```
 
 - **Backgrounds**  
-
 Example Request:  
   ```
     GET /api/v1/backgrounds?location=denver,co
@@ -89,7 +88,6 @@ Example Request:
     ```
   
 - **User Registration**  
-
 Example Request:  
   ```
     POST /api/v1/users
@@ -118,7 +116,6 @@ Example Request:
     ```
   
 - **User Login**  
-
 Example Request:  
   ```
     POST /api/v1/sessions
@@ -146,7 +143,6 @@ Example Request:
     ```
   
 - **Road Trip**  
-
 Example Request:  
   ```
     {
