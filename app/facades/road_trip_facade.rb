@@ -1,13 +1,14 @@
 class RoadTripFacade
   class << self
     def get_trip_details(params)
-      if map_quest_directions(params)[:route][:routeError][:errorCode] == 2
+      if directions(params)[:route][:routeError][:errorCode] == 2
         travel_time = 'Impossible route'
         weather_at_eta = {}
       else
-        travel_time_nearest_hour = travel_time_to_nearest_hour(map_quest_directions(params)[:route][:realTime])
-        forcast = ForcastFacade.location_weather_data(params[:destination], travel_time_nearest_hour)
-        travel_time = map_quest_directions(params)[:route][:formattedTime]
+        travel_time_nearest_hour = travel_time_to_nearest_hour(directions(params)[:route][:realTime])
+        forcast = destination_forcast(params[:destination], travel_time_nearest_hour)
+        # forcast = ForcastFacade.location_weather_data(params[:destination], travel_time_nearest_hour)
+        travel_time = directions(params)[:route][:formattedTime]
         weather_at_eta = set_weather(forcast, travel_time_nearest_hour)
       end
 
@@ -20,9 +21,15 @@ class RoadTripFacade
       )
     end
 
-    def map_quest_directions(params)
+    def directions(params)
       Rails.cache.fetch("Directions from #{params[:origin]} to #{params[:destination]}", expires_in: 1.hours) do
         MapQuestService.get_directions(params)
+      end
+    end
+
+    def destination_forcast(destination, time)
+      Rails.cache.fetch("Forcast for #{destination}, in #{time} hours", expires_in: 1.hours) do
+        ForcastFacade.location_weather_data(destination, time)
       end
     end
 
