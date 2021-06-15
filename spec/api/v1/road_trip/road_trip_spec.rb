@@ -6,7 +6,7 @@ RSpec.describe 'POST /users', :vcr do
 
     body = {
         "origin": "Denver,CO",
-        "destination": "Pueblo,CO",
+        "destination": "Estes Park, CO",
         "auth_token": "#{user.auth_token}"
     }
 
