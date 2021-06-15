@@ -123,8 +123,8 @@ Example Request:
     Accept: application/json
 
     {
-    "email": "123@example.com",
-    "password": "verystrongpassword"
+      "email": "123@example.com",
+      "password": "verystrongpassword"
     }
   ```
 
