@@ -8,19 +8,13 @@ class OpenWeatherService
         req.params['exclude'] = 'minutely,alerts'
         req.params['units'] = 'imperial'
       end
-      parse_data(resp)
+      GeneralService.parse_data(resp)
     end
 
     private
 
     def conn
-      Faraday.new(url: 'https://api.openweathermap.org/data/2.5/') do |faraday|
-        faraday.headers['Accept'] = '*/*'
-      end
-    end
-
-    def parse_data(resp)
-      JSON.parse(resp.body, symbolize_names: true)
+      GeneralService.conn('https://api.openweathermap.org/data/2.5/')
     end
   end
 end
