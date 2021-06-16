@@ -32,7 +32,7 @@ RSpec.describe 'POST /users', :vcr do
   end
 
   describe 'sad path' do
-    it 'responds with a 409 level status if email is taken' do
+    it 'responds with a 400 level status if email is taken' do
       user = User.create!(email: 'whatever@example.com', password: '123', password_confirmation: '123')
       body = {
         email: "whatever@example.com",
@@ -44,7 +44,7 @@ RSpec.describe 'POST /users', :vcr do
       resp = JSON.parse(response.body, symbolize_names: true)
   
       expect(response).to_not be_successful
-      expect(response.status).to eq(409)
+      expect(response.status).to eq(400)
   
       expect(resp.keys).to eq([:errors])
       expect(resp[:errors]).to eq('Email has already been taken')
