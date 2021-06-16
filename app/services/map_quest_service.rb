@@ -1,4 +1,4 @@
-class MapQuestService < GeneralService
+class MapQuestService
   class << self
     def get_location_details(location)
       resp = conn.get('address') do |req|
