@@ -1,4 +1,4 @@
-class UnsplashService
+class UnsplashService 
   class << self
     def get_location_image(location)
       resp = conn.get('/search/photos') do |req|
