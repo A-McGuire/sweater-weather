@@ -6,8 +6,10 @@ class RoadTripFacade
         weather_at_eta = {}
       else
         travel_time_nearest_hour = travel_time_to_nearest_hour(directions(params)[:route][:realTime])
+
         forcast = destination_forcast(params[:destination], travel_time_nearest_hour)
         travel_time = directions(params)[:route][:formattedTime]
+        
         weather_at_eta = {
           temperature: forcast[:hourly_weather][travel_time_nearest_hour - 1][:temperature],
           conditions: forcast[:hourly_weather][travel_time_nearest_hour - 1][:conditions]

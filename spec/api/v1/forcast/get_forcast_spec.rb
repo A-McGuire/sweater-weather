@@ -40,9 +40,9 @@ RSpec.describe '/forcast', :vcr do
     expect(forcast[:data][:attributes][:current_weather][:sunset]).to be_a String
     expect(forcast[:data][:attributes][:current_weather][:temperature]).to be_a Float
     expect(forcast[:data][:attributes][:current_weather][:feels_like]).to be_a Float
-    expect(forcast[:data][:attributes][:current_weather][:humidity]).to be_a Integer # or float
-    expect(forcast[:data][:attributes][:current_weather][:uvi]).to be_a Float # or int
-    expect(forcast[:data][:attributes][:current_weather][:visibility]).to be_a Integer # or float
+    expect(forcast[:data][:attributes][:current_weather][:humidity]).to be_a Integer
+    expect(forcast[:data][:attributes][:current_weather][:uvi]).to be_a Float
+    expect(forcast[:data][:attributes][:current_weather][:visibility]).to be_a Integer
     expect(forcast[:data][:attributes][:current_weather][:conditions]).to be_a String
     expect(forcast[:data][:attributes][:current_weather][:icon]).to be_a String
   end
