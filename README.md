@@ -27,9 +27,9 @@ bundle install
 ```
 
 ### Testing
-The full test suite can be run with the command `bundle exec rspec`
-Individual test files can be run with the command `bundle exec rspec <file path>`
-Individual tests can be run with the command `bundle exec rspec <file path>:<test line number>`
+The full test suite can be run with the command `bundle exec rspec`  
+Individual test files can be run with the command `bundle exec rspec <file path>`    
+Individual tests can be run with the command `bundle exec rspec <file path>:<test line number>`  
 
 ### Endpoints
 
