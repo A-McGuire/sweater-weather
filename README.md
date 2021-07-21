@@ -1,5 +1,5 @@
 # Sweater Weather API
-Sweater Weather is a back end application designed to serve a front end application with weather data for road trips.
+Sweater Weather is a back end application designed to aggregate data from a variety of external APIs to serve a front end application with weather data for road trips.
 
 ### Learning Goals
 - Expose an API that aggregates data from multiple external APIs
